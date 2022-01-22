@@ -6,19 +6,21 @@
 //
 
 import UIKit
+import Moya
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    
-    
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
         
-        let viewController = MainViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
+        let networkService = NetworkService(provider: MoyaProvider<MultiTarget>(plugins: [MoyaConfig.plugin]))
+        
+        let viewController = FetchUserController(networkService: networkService)
+        let navigationController = MainNavigationController(rootViewController: viewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }

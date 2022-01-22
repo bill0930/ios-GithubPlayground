@@ -9,9 +9,16 @@
 /* Begin PBXBuildFile section */
 		470F7937279BDCC80046FC3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F7936279BDCC80046FC3E /* AppDelegate.swift */; };
 		470F7939279BDCC80046FC3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F7938279BDCC80046FC3E /* SceneDelegate.swift */; };
-		470F793B279BDCC80046FC3E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F793A279BDCC80046FC3E /* MainViewController.swift */; };
+		470F793B279BDCC80046FC3E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F793A279BDCC80046FC3E /* MainNavigationController.swift */; };
 		470F7940279BDCC80046FC3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 470F793F279BDCC80046FC3E /* Assets.xcassets */; };
 		470F7943279BDCC80046FC3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 470F7941279BDCC80046FC3E /* LaunchScreen.storyboard */; };
+		470FCE05279C7CD7002C233A /* FetchUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE04279C7CD7002C233A /* FetchUserController.swift */; };
+		470FCE09279C8405002C233A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE08279C8405002C233A /* Extensions.swift */; };
+		470FCE11279C93E9002C233A /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 470FCE0D279C93E9002C233A /* Poppins-Bold.ttf */; };
+		470FCE12279C93E9002C233A /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 470FCE0E279C93E9002C233A /* Poppins-Regular.ttf */; };
+		470FCE13279C93E9002C233A /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 470FCE0F279C93E9002C233A /* Poppins-Light.ttf */; };
+		470FCE14279C93E9002C233A /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 470FCE10279C93E9002C233A /* Poppins-Medium.ttf */; };
+		470FCE16279CC5A7002C233A /* UserAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE15279CC5A7002C233A /* UserAPITargetType.swift */; };
 		47F8E7B5279BE71B0027A723 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 47F8E7B4279BE71B0027A723 /* .swiftlint.yml */; };
 		47F8E7B7279BE7210027A723 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 47F8E7B6279BE7210027A723 /* .gitignore */; };
 		47F8E7D6279BEB380027A723 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8E7D5279BEB380027A723 /* NetworkService.swift */; };
@@ -28,10 +35,17 @@
 		470F7933279BDCC80046FC3E /* GithubPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		470F7936279BDCC80046FC3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		470F7938279BDCC80046FC3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		470F793A279BDCC80046FC3E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		470F793A279BDCC80046FC3E /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		470F793F279BDCC80046FC3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		470F7942279BDCC80046FC3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		470F7944279BDCC80046FC3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		470FCE04279C7CD7002C233A /* FetchUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserController.swift; sourceTree = "<group>"; };
+		470FCE08279C8405002C233A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		470FCE0D279C93E9002C233A /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		470FCE0E279C93E9002C233A /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		470FCE0F279C93E9002C233A /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		470FCE10279C93E9002C233A /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		470FCE15279CC5A7002C233A /* UserAPITargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPITargetType.swift; sourceTree = "<group>"; };
 		47F8E7B4279BE71B0027A723 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		47F8E7B6279BE7210027A723 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		47F8E7D5279BEB380027A723 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -96,12 +110,13 @@
 		470F7935279BDCC80046FC3E /* GithubPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				470FCE0C279C93AB002C233A /* Fonts */,
+				470FCE07279C83CF002C233A /* Utils */,
 				47F8E7BA279BE9AC0027A723 /* Services */,
 				47F8E7B9279BE9A60027A723 /* Modules */,
-				47F8E7B8279BE99E0027A723 /* Config */,
 				470F7936279BDCC80046FC3E /* AppDelegate.swift */,
 				470F7938279BDCC80046FC3E /* SceneDelegate.swift */,
-				470F793A279BDCC80046FC3E /* MainViewController.swift */,
+				470F793A279BDCC80046FC3E /* MainNavigationController.swift */,
 				470F793F279BDCC80046FC3E /* Assets.xcassets */,
 				470F7941279BDCC80046FC3E /* LaunchScreen.storyboard */,
 				470F7944279BDCC80046FC3E /* Info.plist */,
@@ -109,16 +124,37 @@
 			path = GithubPlayground;
 			sourceTree = "<group>";
 		};
-		47F8E7B8279BE99E0027A723 /* Config */ = {
+		470FCE06279C7CDB002C233A /* FetchUser */ = {
 			isa = PBXGroup;
 			children = (
+				470FCE04279C7CD7002C233A /* FetchUserController.swift */,
 			);
-			path = Config;
+			path = FetchUser;
+			sourceTree = "<group>";
+		};
+		470FCE07279C83CF002C233A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				470FCE08279C8405002C233A /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		470FCE0C279C93AB002C233A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				470FCE0D279C93E9002C233A /* Poppins-Bold.ttf */,
+				470FCE0F279C93E9002C233A /* Poppins-Light.ttf */,
+				470FCE10279C93E9002C233A /* Poppins-Medium.ttf */,
+				470FCE0E279C93E9002C233A /* Poppins-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		47F8E7B9279BE9A60027A723 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				470FCE06279C7CDB002C233A /* FetchUser */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -164,6 +200,7 @@
 				47F8E7DA279BECE90027A723 /* GetUserRequest.swift */,
 				47F8E7E3279BF4260027A723 /* GetUserResponse.swift */,
 				47F8E7E5279BF7C10027A723 /* UserAPI.swift */,
+				470FCE15279CC5A7002C233A /* UserAPITargetType.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -237,8 +274,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				470FCE13279C93E9002C233A /* Poppins-Light.ttf in Resources */,
 				47F8E7B7279BE7210027A723 /* .gitignore in Resources */,
 				47F8E7B5279BE71B0027A723 /* .swiftlint.yml in Resources */,
+				470FCE11279C93E9002C233A /* Poppins-Bold.ttf in Resources */,
+				470FCE12279C93E9002C233A /* Poppins-Regular.ttf in Resources */,
+				470FCE14279C93E9002C233A /* Poppins-Medium.ttf in Resources */,
 				470F7943279BDCC80046FC3E /* LaunchScreen.storyboard in Resources */,
 				470F7940279BDCC80046FC3E /* Assets.xcassets in Resources */,
 			);
@@ -315,10 +356,13 @@
 				47F8E7DB279BECE90027A723 /* GetUserRequest.swift in Sources */,
 				47F8E7E6279BF7C10027A723 /* UserAPI.swift in Sources */,
 				47F8E7D8279BEB800027A723 /* DecodableResponseTargetType.swift in Sources */,
-				470F793B279BDCC80046FC3E /* MainViewController.swift in Sources */,
+				470FCE16279CC5A7002C233A /* UserAPITargetType.swift in Sources */,
+				470F793B279BDCC80046FC3E /* MainNavigationController.swift in Sources */,
 				470F7937279BDCC80046FC3E /* AppDelegate.swift in Sources */,
 				47F8E7D6279BEB380027A723 /* NetworkService.swift in Sources */,
 				470F7939279BDCC80046FC3E /* SceneDelegate.swift in Sources */,
+				470FCE05279C7CD7002C233A /* FetchUserController.swift in Sources */,
+				470FCE09279C8405002C233A /* Extensions.swift in Sources */,
 				47F8E7E4279BF4260027A723 /* GetUserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

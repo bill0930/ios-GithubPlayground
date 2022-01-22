@@ -8,21 +8,22 @@
 import Foundation
 import Moya
 
-protocol GetUserRequest: DecodableResponseTargetType {}
+protocol GetUserRequest: UserAPITargetType {}
 
 extension GetUserRequest {
     var baseURL: URL { return URL(string: "https://api.github.com/users/")! }
-    var headers: [String : String]? { return nil }
-    var sampleData: Data { return Data() }
 }
 
 extension UserAPI {
     struct GetUser: GetUserRequest {
         typealias ResponseType = GetUserResponse
-        
-        var path: String { return "bill0930" }
+        var path: String
         var method: Moya.Method { return .get }
         var task: Task { return .requestPlain }
+        
+        init(username: String) {
+            path = username
+        }
     }
 }
 
