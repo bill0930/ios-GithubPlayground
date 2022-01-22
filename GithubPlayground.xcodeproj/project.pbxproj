@@ -14,6 +14,12 @@
 		470F7943279BDCC80046FC3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 470F7941279BDCC80046FC3E /* LaunchScreen.storyboard */; };
 		47F8E7B5279BE71B0027A723 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 47F8E7B4279BE71B0027A723 /* .swiftlint.yml */; };
 		47F8E7B7279BE7210027A723 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 47F8E7B6279BE7210027A723 /* .gitignore */; };
+		47F8E7D6279BEB380027A723 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8E7D5279BEB380027A723 /* NetworkService.swift */; };
+		47F8E7D8279BEB800027A723 /* DecodableResponseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8E7D7279BEB800027A723 /* DecodableResponseTargetType.swift */; };
+		47F8E7DB279BECE90027A723 /* GetUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8E7DA279BECE90027A723 /* GetUserRequest.swift */; };
+		47F8E7E4279BF4260027A723 /* GetUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8E7E3279BF4260027A723 /* GetUserResponse.swift */; };
+		47F8E7E6279BF7C10027A723 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8E7E5279BF7C10027A723 /* UserAPI.swift */; };
+		47F8E7E9279BF9DE0027A723 /* MoyaConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8E7E8279BF9DE0027A723 /* MoyaConfig.swift */; };
 		9DA78354D220781C0711AC1E /* Pods_GithubPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7395798393033B4671138BCC /* Pods_GithubPlayground.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +34,12 @@
 		470F7944279BDCC80046FC3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47F8E7B4279BE71B0027A723 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		47F8E7B6279BE7210027A723 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		47F8E7D5279BEB380027A723 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		47F8E7D7279BEB800027A723 /* DecodableResponseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableResponseTargetType.swift; sourceTree = "<group>"; };
+		47F8E7DA279BECE90027A723 /* GetUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserRequest.swift; sourceTree = "<group>"; };
+		47F8E7E3279BF4260027A723 /* GetUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserResponse.swift; sourceTree = "<group>"; };
+		47F8E7E5279BF7C10027A723 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		47F8E7E8279BF9DE0027A723 /* MoyaConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaConfig.swift; sourceTree = "<group>"; };
 		7395798393033B4671138BCC /* Pods_GithubPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C9A0960534BE8AD1AD1C19 /* Pods-GithubPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubPlayground.debug.xcconfig"; path = "Target Support Files/Pods-GithubPlayground/Pods-GithubPlayground.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +96,9 @@
 		470F7935279BDCC80046FC3E /* GithubPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				47F8E7BA279BE9AC0027A723 /* Services */,
+				47F8E7B9279BE9A60027A723 /* Modules */,
+				47F8E7B8279BE99E0027A723 /* Config */,
 				470F7936279BDCC80046FC3E /* AppDelegate.swift */,
 				470F7938279BDCC80046FC3E /* SceneDelegate.swift */,
 				470F793A279BDCC80046FC3E /* MainViewController.swift */,
@@ -92,6 +107,73 @@
 				470F7944279BDCC80046FC3E /* Info.plist */,
 			);
 			path = GithubPlayground;
+			sourceTree = "<group>";
+		};
+		47F8E7B8279BE99E0027A723 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		47F8E7B9279BE9A60027A723 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		47F8E7BA279BE9AC0027A723 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				47F8E7BD279BEA320027A723 /* NetworkService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		47F8E7BD279BEA320027A723 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				47F8E7E7279BF9CE0027A723 /* Config */,
+				47F8E7D9279BECCC0027A723 /* Endpoints */,
+				47F8E7C6279BEA320027A723 /* Model */,
+				47F8E7D5279BEB380027A723 /* NetworkService.swift */,
+				47F8E7D7279BEB800027A723 /* DecodableResponseTargetType.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		47F8E7C6279BEA320027A723 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		47F8E7D9279BECCC0027A723 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				47F8E7E2279BF38E0027A723 /* User */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		47F8E7E2279BF38E0027A723 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				47F8E7DA279BECE90027A723 /* GetUserRequest.swift */,
+				47F8E7E3279BF4260027A723 /* GetUserResponse.swift */,
+				47F8E7E5279BF7C10027A723 /* UserAPI.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		47F8E7E7279BF9CE0027A723 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				47F8E7E8279BF9DE0027A723 /* MoyaConfig.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +311,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47F8E7E9279BF9DE0027A723 /* MoyaConfig.swift in Sources */,
+				47F8E7DB279BECE90027A723 /* GetUserRequest.swift in Sources */,
+				47F8E7E6279BF7C10027A723 /* UserAPI.swift in Sources */,
+				47F8E7D8279BEB800027A723 /* DecodableResponseTargetType.swift in Sources */,
 				470F793B279BDCC80046FC3E /* MainViewController.swift in Sources */,
 				470F7937279BDCC80046FC3E /* AppDelegate.swift in Sources */,
+				47F8E7D6279BEB380027A723 /* NetworkService.swift in Sources */,
 				470F7939279BDCC80046FC3E /* SceneDelegate.swift in Sources */,
+				47F8E7E4279BF4260027A723 /* GetUserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,5 +9,6 @@ target 'GithubPlayground' do
   pod 'Moya', '~> 15.0'
   pod 'SwiftLint'
   pod 'SDWebImage'
+  pod "PromiseKit", "~> 6.8"
 
 end
