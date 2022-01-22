@@ -21,7 +21,7 @@ class FetchUserController: UIViewController {
     
     private var networkService: NetworkServiceProtocol
     
-    private lazy var searchFieldStack: UIStackView = {
+    private lazy var searchbarStack: UIStackView = {
        let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fill
@@ -82,7 +82,9 @@ class FetchUserController: UIViewController {
     // MARK: - Selectors
     
     @objc private func handleFetchUser() {
-        fetchUser()
+        let vc = UserInfoViewController()
+        navigationController?.pushViewController(vc, animated: true)
+//        fetchUser()
     }
     
     //Calls this function when the tap is recognized.
@@ -95,9 +97,9 @@ class FetchUserController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .speerYellow
-        view.addSubview(searchFieldStack)
+        view.addSubview(searchbarStack)
         
-        searchFieldStack.snp.makeConstraints {
+        searchbarStack.snp.makeConstraints {
             $0.top.equalTo(200)
             $0.centerX.equalToSuperview()
         }
@@ -107,8 +109,8 @@ class FetchUserController: UIViewController {
             $0.width.equalTo(Constants.searchBarWidth)
         }
         
-        searchFieldStack.addArrangedSubview(searchTextField)
-        searchFieldStack.addArrangedSubview(searchButton)
+        searchbarStack.addArrangedSubview(searchTextField)
+        searchbarStack.addArrangedSubview(searchButton)
     }
     
     private func configureKeyboard() {
