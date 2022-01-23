@@ -23,6 +23,9 @@
 		470FCE1B279CD185002C233A /* UIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE1A279CD185002C233A /* UIConfig.swift */; };
 		470FCE20279CDFAB002C233A /* FetchUserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE1F279CDFAB002C233A /* FetchUserRouter.swift */; };
 		470FCE22279CEBA2002C233A /* DependenciesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE21279CEBA2002C233A /* DependenciesConfigurator.swift */; };
+		470FCE26279D01A2002C233A /* ListUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE25279D01A2002C233A /* ListUserController.swift */; };
+		470FCE29279D0284002C233A /* GetFollowingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE28279D0284002C233A /* GetFollowingRequest.swift */; };
+		470FCE2B279D02F5002C233A /* GetFollowingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE2A279D02F5002C233A /* GetFollowingResponse.swift */; };
 		47F8E7B5279BE71B0027A723 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 47F8E7B4279BE71B0027A723 /* .swiftlint.yml */; };
 		47F8E7B7279BE7210027A723 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 47F8E7B6279BE7210027A723 /* .gitignore */; };
 		47F8E7D6279BEB380027A723 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8E7D5279BEB380027A723 /* NetworkService.swift */; };
@@ -54,6 +57,9 @@
 		470FCE1A279CD185002C233A /* UIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfig.swift; sourceTree = "<group>"; };
 		470FCE1F279CDFAB002C233A /* FetchUserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserRouter.swift; sourceTree = "<group>"; };
 		470FCE21279CEBA2002C233A /* DependenciesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesConfigurator.swift; sourceTree = "<group>"; };
+		470FCE25279D01A2002C233A /* ListUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserController.swift; sourceTree = "<group>"; };
+		470FCE28279D0284002C233A /* GetFollowingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowingRequest.swift; sourceTree = "<group>"; };
+		470FCE2A279D02F5002C233A /* GetFollowingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowingResponse.swift; sourceTree = "<group>"; };
 		47F8E7B4279BE71B0027A723 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		47F8E7B6279BE7210027A723 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		47F8E7D5279BEB380027A723 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -168,10 +174,37 @@
 			path = UserInfo;
 			sourceTree = "<group>";
 		};
+		470FCE23279D00AA002C233A /* GetUser */ = {
+			isa = PBXGroup;
+			children = (
+				47F8E7DA279BECE90027A723 /* GetUserRequest.swift */,
+				47F8E7E3279BF4260027A723 /* GetUserResponse.swift */,
+			);
+			path = GetUser;
+			sourceTree = "<group>";
+		};
+		470FCE24279D0123002C233A /* ListUser */ = {
+			isa = PBXGroup;
+			children = (
+				470FCE25279D01A2002C233A /* ListUserController.swift */,
+			);
+			path = ListUser;
+			sourceTree = "<group>";
+		};
+		470FCE27279D026B002C233A /* GetFollowing */ = {
+			isa = PBXGroup;
+			children = (
+				470FCE28279D0284002C233A /* GetFollowingRequest.swift */,
+				470FCE2A279D02F5002C233A /* GetFollowingResponse.swift */,
+			);
+			path = GetFollowing;
+			sourceTree = "<group>";
+		};
 		47F8E7B9279BE9A60027A723 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				470FCE17279CC777002C233A /* UserInfo */,
+				470FCE24279D0123002C233A /* ListUser */,
 				470FCE06279C7CDB002C233A /* FetchUser */,
 			);
 			path = Modules;
@@ -191,18 +224,10 @@
 			children = (
 				47F8E7E7279BF9CE0027A723 /* Config */,
 				47F8E7D9279BECCC0027A723 /* Endpoints */,
-				47F8E7C6279BEA320027A723 /* Model */,
 				47F8E7D5279BEB380027A723 /* NetworkService.swift */,
 				47F8E7D7279BEB800027A723 /* DecodableResponseTargetType.swift */,
 			);
 			path = NetworkService;
-			sourceTree = "<group>";
-		};
-		47F8E7C6279BEA320027A723 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		47F8E7D9279BECCC0027A723 /* Endpoints */ = {
@@ -216,8 +241,8 @@
 		47F8E7E2279BF38E0027A723 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				47F8E7DA279BECE90027A723 /* GetUserRequest.swift */,
-				47F8E7E3279BF4260027A723 /* GetUserResponse.swift */,
+				470FCE27279D026B002C233A /* GetFollowing */,
+				470FCE23279D00AA002C233A /* GetUser */,
 				47F8E7E5279BF7C10027A723 /* UserAPI.swift */,
 				470FCE15279CC5A7002C233A /* UserAPITargetType.swift */,
 			);
@@ -378,7 +403,9 @@
 				47F8E7D8279BEB800027A723 /* DecodableResponseTargetType.swift in Sources */,
 				470FCE16279CC5A7002C233A /* UserAPITargetType.swift in Sources */,
 				470F793B279BDCC80046FC3E /* MainNavigationController.swift in Sources */,
+				470FCE2B279D02F5002C233A /* GetFollowingResponse.swift in Sources */,
 				470FCE19279CC7D4002C233A /* UserInfoViewController.swift in Sources */,
+				470FCE26279D01A2002C233A /* ListUserController.swift in Sources */,
 				470FCE22279CEBA2002C233A /* DependenciesConfigurator.swift in Sources */,
 				470F7937279BDCC80046FC3E /* AppDelegate.swift in Sources */,
 				47F8E7D6279BEB380027A723 /* NetworkService.swift in Sources */,
@@ -387,6 +414,7 @@
 				470FCE05279C7CD7002C233A /* FetchUserController.swift in Sources */,
 				470FCE09279C8405002C233A /* Extensions.swift in Sources */,
 				470FCE20279CDFAB002C233A /* FetchUserRouter.swift in Sources */,
+				470FCE29279D0284002C233A /* GetFollowingRequest.swift in Sources */,
 				47F8E7E4279BF4260027A723 /* GetUserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

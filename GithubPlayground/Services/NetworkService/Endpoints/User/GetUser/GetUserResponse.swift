@@ -33,5 +33,5 @@ struct GetUserResponse: Decodable {
         followers = try container.decode(Int.self, forKey: .followers)
         following = try container.decode(Int.self, forKey: .following)
     }
-    
+
 }
