@@ -19,6 +19,8 @@
 		470FCE13279C93E9002C233A /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 470FCE0F279C93E9002C233A /* Poppins-Light.ttf */; };
 		470FCE14279C93E9002C233A /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 470FCE10279C93E9002C233A /* Poppins-Medium.ttf */; };
 		470FCE16279CC5A7002C233A /* UserAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE15279CC5A7002C233A /* UserAPITargetType.swift */; };
+		470FCE19279CC7D4002C233A /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE18279CC7D4002C233A /* UserInfoViewController.swift */; };
+		470FCE1B279CD185002C233A /* UIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE1A279CD185002C233A /* UIConfig.swift */; };
 		47F8E7B5279BE71B0027A723 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 47F8E7B4279BE71B0027A723 /* .swiftlint.yml */; };
 		47F8E7B7279BE7210027A723 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 47F8E7B6279BE7210027A723 /* .gitignore */; };
 		47F8E7D6279BEB380027A723 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8E7D5279BEB380027A723 /* NetworkService.swift */; };
@@ -46,6 +48,8 @@
 		470FCE0F279C93E9002C233A /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		470FCE10279C93E9002C233A /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		470FCE15279CC5A7002C233A /* UserAPITargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPITargetType.swift; sourceTree = "<group>"; };
+		470FCE18279CC7D4002C233A /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		470FCE1A279CD185002C233A /* UIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfig.swift; sourceTree = "<group>"; };
 		47F8E7B4279BE71B0027A723 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		47F8E7B6279BE7210027A723 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		47F8E7D5279BEB380027A723 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -151,9 +155,18 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		470FCE17279CC777002C233A /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				470FCE18279CC7D4002C233A /* UserInfoViewController.swift */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
 		47F8E7B9279BE9A60027A723 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				470FCE17279CC777002C233A /* UserInfo */,
 				470FCE06279C7CDB002C233A /* FetchUser */,
 			);
 			path = Modules;
@@ -209,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				47F8E7E8279BF9DE0027A723 /* MoyaConfig.swift */,
+				470FCE1A279CD185002C233A /* UIConfig.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -358,8 +372,10 @@
 				47F8E7D8279BEB800027A723 /* DecodableResponseTargetType.swift in Sources */,
 				470FCE16279CC5A7002C233A /* UserAPITargetType.swift in Sources */,
 				470F793B279BDCC80046FC3E /* MainNavigationController.swift in Sources */,
+				470FCE19279CC7D4002C233A /* UserInfoViewController.swift in Sources */,
 				470F7937279BDCC80046FC3E /* AppDelegate.swift in Sources */,
 				47F8E7D6279BEB380027A723 /* NetworkService.swift in Sources */,
+				470FCE1B279CD185002C233A /* UIConfig.swift in Sources */,
 				470F7939279BDCC80046FC3E /* SceneDelegate.swift in Sources */,
 				470FCE05279C7CD7002C233A /* FetchUserController.swift in Sources */,
 				470FCE09279C8405002C233A /* Extensions.swift in Sources */,

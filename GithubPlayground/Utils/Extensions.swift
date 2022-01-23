@@ -28,6 +28,14 @@ extension UIFont {
     }
     
     static func mainFont(ofSize size: CGFloat) -> UIFont {
+        return customFont(name: "Poppins-Regular", size: size)
+    }
+    
+    static func boldMainFont(ofSize size: CGFloat) -> UIFont {
+        return customFont(name: "Poppins-Bold", size: size)
+    }
+    
+    static func lightMainFont(ofSize size: CGFloat) -> UIFont {
         return customFont(name: "Poppins-Light", size: size)
     }
 }
