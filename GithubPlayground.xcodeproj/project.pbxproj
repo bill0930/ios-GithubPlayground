@@ -22,6 +22,7 @@
 		470FCE19279CC7D4002C233A /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE18279CC7D4002C233A /* UserInfoViewController.swift */; };
 		470FCE1B279CD185002C233A /* UIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE1A279CD185002C233A /* UIConfig.swift */; };
 		470FCE20279CDFAB002C233A /* FetchUserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE1F279CDFAB002C233A /* FetchUserRouter.swift */; };
+		470FCE22279CEBA2002C233A /* DependenciesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE21279CEBA2002C233A /* DependenciesConfigurator.swift */; };
 		47F8E7B5279BE71B0027A723 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 47F8E7B4279BE71B0027A723 /* .swiftlint.yml */; };
 		47F8E7B7279BE7210027A723 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 47F8E7B6279BE7210027A723 /* .gitignore */; };
 		47F8E7D6279BEB380027A723 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8E7D5279BEB380027A723 /* NetworkService.swift */; };
@@ -52,6 +53,7 @@
 		470FCE18279CC7D4002C233A /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		470FCE1A279CD185002C233A /* UIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfig.swift; sourceTree = "<group>"; };
 		470FCE1F279CDFAB002C233A /* FetchUserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserRouter.swift; sourceTree = "<group>"; };
+		470FCE21279CEBA2002C233A /* DependenciesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesConfigurator.swift; sourceTree = "<group>"; };
 		47F8E7B4279BE71B0027A723 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		47F8E7B6279BE7210027A723 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		47F8E7D5279BEB380027A723 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				47F8E7BD279BEA320027A723 /* NetworkService */,
+				470FCE21279CEBA2002C233A /* DependenciesConfigurator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				470FCE16279CC5A7002C233A /* UserAPITargetType.swift in Sources */,
 				470F793B279BDCC80046FC3E /* MainNavigationController.swift in Sources */,
 				470FCE19279CC7D4002C233A /* UserInfoViewController.swift in Sources */,
+				470FCE22279CEBA2002C233A /* DependenciesConfigurator.swift in Sources */,
 				470F7937279BDCC80046FC3E /* AppDelegate.swift in Sources */,
 				47F8E7D6279BEB380027A723 /* NetworkService.swift in Sources */,
 				470FCE1B279CD185002C233A /* UIConfig.swift in Sources */,

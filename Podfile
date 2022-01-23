@@ -8,6 +8,7 @@ target 'GithubPlayground' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'Moya', '~> 15.0'
   pod 'SwiftLint'
+  pod 'Swinject'
   pod 'SDWebImage'
   pod "PromiseKit", "~> 6.8"
   pod 'NotificationBannerSwift', '~> 3.0.0'
