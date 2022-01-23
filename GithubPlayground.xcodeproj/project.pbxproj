@@ -36,6 +36,7 @@
 		470FCE40279D4AAF002C233A /* Followers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE3F279D4AAF002C233A /* Followers.swift */; };
 		470FCE42279D4ACB002C233A /* GetFollowersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE41279D4ACB002C233A /* GetFollowersResponse.swift */; };
 		470FCE44279D6C8E002C233A /* ListUserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE43279D6C8E002C233A /* ListUserRouter.swift */; };
+		470FCE46279DB97F002C233A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 470FCE45279DB97F002C233A /* README.md */; };
 		47F8E7B5279BE71B0027A723 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 47F8E7B4279BE71B0027A723 /* .swiftlint.yml */; };
 		47F8E7B7279BE7210027A723 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 47F8E7B6279BE7210027A723 /* .gitignore */; };
 		47F8E7D6279BEB380027A723 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8E7D5279BEB380027A723 /* NetworkService.swift */; };
@@ -80,6 +81,7 @@
 		470FCE3F279D4AAF002C233A /* Followers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Followers.swift; sourceTree = "<group>"; };
 		470FCE41279D4ACB002C233A /* GetFollowersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersResponse.swift; sourceTree = "<group>"; };
 		470FCE43279D6C8E002C233A /* ListUserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserRouter.swift; sourceTree = "<group>"; };
+		470FCE45279DB97F002C233A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		47F8E7B4279BE71B0027A723 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		47F8E7B6279BE7210027A723 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		47F8E7D5279BEB380027A723 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		470F792A279BDCC80046FC3E = {
 			isa = PBXGroup;
 			children = (
+				470FCE45279DB97F002C233A /* README.md */,
 				47F8E7B6279BE7210027A723 /* .gitignore */,
 				47F8E7B4279BE71B0027A723 /* .swiftlint.yml */,
 				470F7935279BDCC80046FC3E /* GithubPlayground */,
@@ -379,6 +382,7 @@
 				470FCE11279C93E9002C233A /* Poppins-Bold.ttf in Resources */,
 				470FCE12279C93E9002C233A /* Poppins-Regular.ttf in Resources */,
 				470FCE14279C93E9002C233A /* Poppins-Medium.ttf in Resources */,
+				470FCE46279DB97F002C233A /* README.md in Resources */,
 				470F7943279BDCC80046FC3E /* LaunchScreen.storyboard in Resources */,
 				470F7940279BDCC80046FC3E /* Assets.xcassets in Resources */,
 			);
