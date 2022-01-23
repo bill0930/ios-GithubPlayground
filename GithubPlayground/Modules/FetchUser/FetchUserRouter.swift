@@ -18,7 +18,7 @@ class FetchUserRouter: FetchUserRouterProtocol {
     var navigationController: UINavigationController?
     
     func navigateToUserInfoVC(user: GetUserResponse) {
-        let vc = UserInfoViewController(user: user)
+        let vc = UserInfoController(user: user)
         navigationController?.pushViewController(vc, animated: true)
     }
 }

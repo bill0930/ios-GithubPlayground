@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         DependenciesConfigurator.shared.registerServices()
-        let networkService = DependenciesConfigurator.shared.container.resolve(NetworkServiceProtocol.self) as! NetworkServiceProtocol
+        let networkService = DependenciesConfigurator.shared.container.resolve(NetworkServiceProtocol.self)!
         let viewController = FetchUserController(networkService: networkService)
         let navigationController = MainNavigationController(rootViewController: viewController)
         window?.rootViewController = navigationController

@@ -19,13 +19,22 @@
 		470FCE13279C93E9002C233A /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 470FCE0F279C93E9002C233A /* Poppins-Light.ttf */; };
 		470FCE14279C93E9002C233A /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 470FCE10279C93E9002C233A /* Poppins-Medium.ttf */; };
 		470FCE16279CC5A7002C233A /* UserAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE15279CC5A7002C233A /* UserAPITargetType.swift */; };
-		470FCE19279CC7D4002C233A /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE18279CC7D4002C233A /* UserInfoViewController.swift */; };
+		470FCE19279CC7D4002C233A /* UserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE18279CC7D4002C233A /* UserInfoController.swift */; };
 		470FCE1B279CD185002C233A /* UIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE1A279CD185002C233A /* UIConfig.swift */; };
 		470FCE20279CDFAB002C233A /* FetchUserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE1F279CDFAB002C233A /* FetchUserRouter.swift */; };
 		470FCE22279CEBA2002C233A /* DependenciesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE21279CEBA2002C233A /* DependenciesConfigurator.swift */; };
 		470FCE26279D01A2002C233A /* ListUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE25279D01A2002C233A /* ListUserController.swift */; };
 		470FCE29279D0284002C233A /* GetFollowingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE28279D0284002C233A /* GetFollowingRequest.swift */; };
 		470FCE2B279D02F5002C233A /* GetFollowingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE2A279D02F5002C233A /* GetFollowingResponse.swift */; };
+		470FCE2D279D1C34002C233A /* ListUserFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE2C279D1C34002C233A /* ListUserFilterView.swift */; };
+		470FCE30279D1D6F002C233A /* ListUserFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE2F279D1D6F002C233A /* ListUserFilterCell.swift */; };
+		470FCE35279D2532002C233A /* ListUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE34279D2532002C233A /* ListUserTableViewCell.swift */; };
+		470FCE37279D3709002C233A /* UserInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE36279D3709002C233A /* UserInfoRouter.swift */; };
+		470FCE39279D3948002C233A /* Following.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE38279D3948002C233A /* Following.swift */; };
+		470FCE3B279D3DDE002C233A /* UserListable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE3A279D3DDE002C233A /* UserListable.swift */; };
+		470FCE3E279D4A1E002C233A /* GetFollowersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE3D279D4A1E002C233A /* GetFollowersRequest.swift */; };
+		470FCE40279D4AAF002C233A /* Followers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE3F279D4AAF002C233A /* Followers.swift */; };
+		470FCE42279D4ACB002C233A /* GetFollowersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE41279D4ACB002C233A /* GetFollowersResponse.swift */; };
 		47F8E7B5279BE71B0027A723 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 47F8E7B4279BE71B0027A723 /* .swiftlint.yml */; };
 		47F8E7B7279BE7210027A723 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 47F8E7B6279BE7210027A723 /* .gitignore */; };
 		47F8E7D6279BEB380027A723 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8E7D5279BEB380027A723 /* NetworkService.swift */; };
@@ -53,13 +62,22 @@
 		470FCE0F279C93E9002C233A /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		470FCE10279C93E9002C233A /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		470FCE15279CC5A7002C233A /* UserAPITargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPITargetType.swift; sourceTree = "<group>"; };
-		470FCE18279CC7D4002C233A /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		470FCE18279CC7D4002C233A /* UserInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoController.swift; sourceTree = "<group>"; };
 		470FCE1A279CD185002C233A /* UIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfig.swift; sourceTree = "<group>"; };
 		470FCE1F279CDFAB002C233A /* FetchUserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserRouter.swift; sourceTree = "<group>"; };
 		470FCE21279CEBA2002C233A /* DependenciesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesConfigurator.swift; sourceTree = "<group>"; };
 		470FCE25279D01A2002C233A /* ListUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserController.swift; sourceTree = "<group>"; };
 		470FCE28279D0284002C233A /* GetFollowingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowingRequest.swift; sourceTree = "<group>"; };
 		470FCE2A279D02F5002C233A /* GetFollowingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowingResponse.swift; sourceTree = "<group>"; };
+		470FCE2C279D1C34002C233A /* ListUserFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserFilterView.swift; sourceTree = "<group>"; };
+		470FCE2F279D1D6F002C233A /* ListUserFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserFilterCell.swift; sourceTree = "<group>"; };
+		470FCE34279D2532002C233A /* ListUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserTableViewCell.swift; sourceTree = "<group>"; };
+		470FCE36279D3709002C233A /* UserInfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRouter.swift; sourceTree = "<group>"; };
+		470FCE38279D3948002C233A /* Following.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Following.swift; sourceTree = "<group>"; };
+		470FCE3A279D3DDE002C233A /* UserListable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListable.swift; sourceTree = "<group>"; };
+		470FCE3D279D4A1E002C233A /* GetFollowersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersRequest.swift; sourceTree = "<group>"; };
+		470FCE3F279D4AAF002C233A /* Followers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Followers.swift; sourceTree = "<group>"; };
+		470FCE41279D4ACB002C233A /* GetFollowersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersResponse.swift; sourceTree = "<group>"; };
 		47F8E7B4279BE71B0027A723 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		47F8E7B6279BE7210027A723 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		47F8E7D5279BEB380027A723 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -169,7 +187,8 @@
 		470FCE17279CC777002C233A /* UserInfo */ = {
 			isa = PBXGroup;
 			children = (
-				470FCE18279CC7D4002C233A /* UserInfoViewController.swift */,
+				470FCE18279CC7D4002C233A /* UserInfoController.swift */,
+				470FCE36279D3709002C233A /* UserInfoRouter.swift */,
 			);
 			path = UserInfo;
 			sourceTree = "<group>";
@@ -186,6 +205,7 @@
 		470FCE24279D0123002C233A /* ListUser */ = {
 			isa = PBXGroup;
 			children = (
+				470FCE2E279D1C3C002C233A /* View */,
 				470FCE25279D01A2002C233A /* ListUserController.swift */,
 			);
 			path = ListUser;
@@ -196,8 +216,37 @@
 			children = (
 				470FCE28279D0284002C233A /* GetFollowingRequest.swift */,
 				470FCE2A279D02F5002C233A /* GetFollowingResponse.swift */,
+				470FCE38279D3948002C233A /* Following.swift */,
 			);
 			path = GetFollowing;
+			sourceTree = "<group>";
+		};
+		470FCE2E279D1C3C002C233A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				470FCE31279D248F002C233A /* ListUserFilter */,
+				470FCE34279D2532002C233A /* ListUserTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		470FCE31279D248F002C233A /* ListUserFilter */ = {
+			isa = PBXGroup;
+			children = (
+				470FCE2C279D1C34002C233A /* ListUserFilterView.swift */,
+				470FCE2F279D1D6F002C233A /* ListUserFilterCell.swift */,
+			);
+			path = ListUserFilter;
+			sourceTree = "<group>";
+		};
+		470FCE3C279D4A04002C233A /* GetFollowers */ = {
+			isa = PBXGroup;
+			children = (
+				470FCE3D279D4A1E002C233A /* GetFollowersRequest.swift */,
+				470FCE41279D4ACB002C233A /* GetFollowersResponse.swift */,
+				470FCE3F279D4AAF002C233A /* Followers.swift */,
+			);
+			path = GetFollowers;
 			sourceTree = "<group>";
 		};
 		47F8E7B9279BE9A60027A723 /* Modules */ = {
@@ -241,6 +290,8 @@
 		47F8E7E2279BF38E0027A723 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				470FCE3A279D3DDE002C233A /* UserListable.swift */,
+				470FCE3C279D4A04002C233A /* GetFollowers */,
 				470FCE27279D026B002C233A /* GetFollowing */,
 				470FCE23279D00AA002C233A /* GetUser */,
 				47F8E7E5279BF7C10027A723 /* UserAPI.swift */,
@@ -397,21 +448,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				470FCE3B279D3DDE002C233A /* UserListable.swift in Sources */,
 				47F8E7E9279BF9DE0027A723 /* MoyaConfig.swift in Sources */,
 				47F8E7DB279BECE90027A723 /* GetUserRequest.swift in Sources */,
 				47F8E7E6279BF7C10027A723 /* UserAPI.swift in Sources */,
 				47F8E7D8279BEB800027A723 /* DecodableResponseTargetType.swift in Sources */,
 				470FCE16279CC5A7002C233A /* UserAPITargetType.swift in Sources */,
 				470F793B279BDCC80046FC3E /* MainNavigationController.swift in Sources */,
+				470FCE30279D1D6F002C233A /* ListUserFilterCell.swift in Sources */,
+				470FCE3E279D4A1E002C233A /* GetFollowersRequest.swift in Sources */,
 				470FCE2B279D02F5002C233A /* GetFollowingResponse.swift in Sources */,
-				470FCE19279CC7D4002C233A /* UserInfoViewController.swift in Sources */,
+				470FCE19279CC7D4002C233A /* UserInfoController.swift in Sources */,
 				470FCE26279D01A2002C233A /* ListUserController.swift in Sources */,
 				470FCE22279CEBA2002C233A /* DependenciesConfigurator.swift in Sources */,
 				470F7937279BDCC80046FC3E /* AppDelegate.swift in Sources */,
+				470FCE2D279D1C34002C233A /* ListUserFilterView.swift in Sources */,
 				47F8E7D6279BEB380027A723 /* NetworkService.swift in Sources */,
 				470FCE1B279CD185002C233A /* UIConfig.swift in Sources */,
+				470FCE42279D4ACB002C233A /* GetFollowersResponse.swift in Sources */,
+				470FCE37279D3709002C233A /* UserInfoRouter.swift in Sources */,
 				470F7939279BDCC80046FC3E /* SceneDelegate.swift in Sources */,
+				470FCE35279D2532002C233A /* ListUserTableViewCell.swift in Sources */,
 				470FCE05279C7CD7002C233A /* FetchUserController.swift in Sources */,
+				470FCE40279D4AAF002C233A /* Followers.swift in Sources */,
+				470FCE39279D3948002C233A /* Following.swift in Sources */,
 				470FCE09279C8405002C233A /* Extensions.swift in Sources */,
 				470FCE20279CDFAB002C233A /* FetchUserRouter.swift in Sources */,
 				470FCE29279D0284002C233A /* GetFollowingRequest.swift in Sources */,

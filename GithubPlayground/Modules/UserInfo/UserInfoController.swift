@@ -1,14 +1,6 @@
 //
-//  UserInfoViewController.swift
+//  UserInfoController.swift
 //  GithubPlayground
-//
-//    Avatar
-//    Username
-//    Name
-//    Description
-//    Follower count, i.e. X followers
-//    Following count, i.e. X following
-//
 //  Created by CHI YU CHAN on 22/1/2022.
 //
 
@@ -24,21 +16,24 @@ private struct Constants {
     static let profileImageSize: CGSize = CGSize(width: 250, height: 250)
     static let labelHeight: CGFloat = 48.0
     static let defaultBio: String = "This user is lazy. He/She does not write anything."
-
 }
 
-class UserInfoViewController: UIViewController {
+class UserInfoController: UIViewController {
     
     // MARK: - Properties
+    
+    var router: UserInfoRouterProtocol?
+    
+    private var networkService: NetworkServiceProtocol {
+        return DependenciesConfigurator.shared.container.resolve(NetworkServiceProtocol.self)!
+    }
+    
+    var user: GetUserResponse
     
     let refreshControl = UIRefreshControl()
     
     let scrollView: UIScrollView = UIScrollView()
     let contentView: UIView = UIView()
-    
-    var user: GetUserResponse
-    
-    private var networkService: NetworkServiceProtocol
     
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
@@ -88,24 +83,31 @@ class UserInfoViewController: UIViewController {
         return textView
     }()
     
-    private let followersLabel: UILabel = {
+    private lazy var followersLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.mainFont(ofSize: 16)
         label.textColor = .black
         label.textAlignment = .center
+        label.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.onFollowersTapped))
+        label.addGestureRecognizer(tap)
         return label
     }()
     
-    private let followingLabel: UILabel = {
+    private lazy var followingLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.mainFont(ofSize: 16)
         label.textColor = .black
         label.textAlignment = .center
+        label.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.onFollowingTapped))
+        label.addGestureRecognizer(tap)
         return label
     }()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
+        configureRouter()
         configureUI()
         configureUser()
         configureRefreshControl()
@@ -121,7 +123,6 @@ class UserInfoViewController: UIViewController {
     
     init(user: GetUserResponse) {
         self.user = user
-        self.networkService = DependenciesConfigurator.shared.container.resolve(NetworkServiceProtocol.self)!
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -156,7 +157,21 @@ class UserInfoViewController: UIViewController {
         }
     }
     
+    @objc private func onFollowersTapped() {
+        router?.navigateToListUserVC(option: .followers, user: user)
+    }
+    
+    @objc private func onFollowingTapped() {
+        router?.navigateToListUserVC(option: .following, user: user)
+    }
+    
     // MARK: - Helpers
+    
+    private func configureRouter() {
+        let router = UserInfoRouter()
+        router.navigationController = navigationController
+        self.router = router
+    }
     
     private func configureUI() {
         view.addSubview(scrollView)
