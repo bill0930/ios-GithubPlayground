@@ -27,6 +27,9 @@ enum ListUserOptions: Int, CaseIterable {
 class ListUserController: UIViewController {
     
     // MARK: - Properties
+    
+    var router: ListUserRouterProtocol?
+    
     private var networkService: NetworkServiceProtocol {
         return DependenciesConfigurator.shared.container.resolve(NetworkServiceProtocol.self)!
     }
@@ -65,6 +68,8 @@ class ListUserController: UIViewController {
     override func viewDidLoad() {
         view.backgroundColor = .speerYellow
         configureUI()
+        configureRouter()
+
         fetchUsers(option: .followers, forPage: 1)
         fetchUsers(option: .following, forPage: 1)
 
@@ -115,7 +120,16 @@ class ListUserController: UIViewController {
         }
     }
     
-    // MARK: - Selectors
+    private func fetchUser(username: String) -> Promise<GetUserResponse> {
+        return Promise<GetUserResponse> { seal in
+            networkService.request(UserAPI.GetUser(username: username))
+                .done { user in
+                    seal.fulfill(user)
+                }.catch { error in
+                    seal.reject(error)
+                }
+        }
+    }
     
     // MARK: - Helpers
     private func configureUI() {
@@ -134,6 +148,12 @@ class ListUserController: UIViewController {
             $0.width.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
+    }
+    
+    func configureRouter() {
+        let router = ListUserRouter()
+        router.navigationController = navigationController
+        self.router = router
     }
     
     private func fetchUsers(option: ListUserOptions, forPage page: Int) {
@@ -196,13 +216,17 @@ extension ListUserController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension ListUserController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dataSource = option == .followers ? followers[indexPath.row] : followings[indexPath.row]
+        fetchUser(username: dataSource.username).done { user in
+            self.router?.navigateToUserInfoVC(user: user)
+        }
+    }
 }
 
 // MARK: - ListUserFilterViewDelegate
 extension ListUserController: ListUserFilterViewDelegate {
     func filterView(_ view: ListUserFilterView, didSelect index: Int) {
-        print("DEBUG: ListUserFilterViewDelegate")
         option = ListUserOptions(rawValue: index) ?? .followers
     }
 }
@@ -210,8 +234,6 @@ extension ListUserController: ListUserFilterViewDelegate {
 // MARK: - UIScrollViewDelegate
 
 extension ListUserController: UIScrollViewDelegate {
-    
-    //
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let ratio = scrollView.contentOffset.y / scrollView.contentSize.height
         if ratio > 0.6 {

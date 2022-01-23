@@ -132,6 +132,7 @@ class FetchUserController: UIViewController {
         router.navigationController = navigationController
         self.router = router
     }
+    
     private func showNotFoundBanner() {
         let title = "User Not Found"
         let banner = StatusBarNotificationBanner(title: title, style: .danger)
