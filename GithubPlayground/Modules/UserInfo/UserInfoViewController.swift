@@ -15,10 +15,12 @@
 import Foundation
 import UIKit
 import SDWebImage
+import PromiseKit
+import NotificationBannerSwift
 
 private struct Constants {
     static let bioTextViewHeight: CGFloat = 75.0
-    static let profileImageTopMargin: CGFloat = 100.0
+    static let profileImageTopMargin: CGFloat = 12.0
     static let profileImageSize: CGSize = CGSize(width: 250, height: 250)
     static let labelHeight: CGFloat = 48.0
     static let defaultBio: String = "This user is lazy. He/She does not write anything."
@@ -29,7 +31,14 @@ class UserInfoViewController: UIViewController {
     
     // MARK: - Properties
     
+    let refreshControl = UIRefreshControl()
+    
+    let scrollView: UIScrollView = UIScrollView()
+    let contentView: UIView = UIView()
+    
     var user: GetUserResponse
+    
+    private var networkService: NetworkServiceProtocol
     
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
@@ -99,10 +108,20 @@ class UserInfoViewController: UIViewController {
     override func viewDidLoad() {
         configureUI()
         configureUser()
+        configureRefreshControl()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {        
+        // Transparent UINavigationBar
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
     }
     
     init(user: GetUserResponse) {
         self.user = user
+        self.networkService = DependenciesConfigurator.shared.container.resolve(NetworkServiceProtocol.self)!
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -112,11 +131,57 @@ class UserInfoViewController: UIViewController {
     
     // MARK: - API
     
+    private func fetchUser() -> Promise<GetUserResponse> {
+        return Promise<GetUserResponse> { seal in
+            networkService.request(UserAPI.GetUser(username: user.username))
+                .done { user in
+                    self.user = user
+                    seal.fulfill(user)
+                }.catch { error in
+                    seal.reject(error)
+                }
+        }
+    }
+    
+    // MARK: - Selectors
+    
+    @objc private func refresh() {
+        fetchUser().done { [weak self] _ in
+            self?.configureUser()
+        }.catch { _ in
+            self.showTryAgainBanner()
+        }.finally { [weak self]  in
+            self?.refreshControl.endRefreshing()
+            self?.configureUser()
+        }
+    }
+    
     // MARK: - Helpers
     
     private func configureUI() {
-        view.backgroundColor = .speerYellow
-        view.addSubview(profileImageView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        
+        scrollView.snp.makeConstraints {
+            $0.leading.equalToSuperview()
+            $0.top.equalToSuperview()
+            $0.width.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+        
+        contentView.snp.makeConstraints {
+            $0.leading.equalTo(scrollView.snp.leading)
+            $0.top.equalTo(scrollView.snp.top)
+            $0.width.equalTo(view.snp.width)
+            $0.height.equalTo(view.bounds.height - 48)
+        }
+        
+        contentView.snp.makeConstraints {
+            $0.edges.equalTo(0)
+        }
+        scrollView.backgroundColor = .speerYellow
+        contentView.backgroundColor = .speerYellow
+        contentView.addSubview(profileImageView)
         
         profileImageView.snp.makeConstraints {
             $0.top.equalTo(Constants.profileImageTopMargin)
@@ -134,15 +199,15 @@ class UserInfoViewController: UIViewController {
         vStack.addArrangedSubview(usernameLabel)
         vStack.addArrangedSubview(bioTextView)
         
-        view.addSubview(vStack)
+        contentView.addSubview(vStack)
         vStack.snp.makeConstraints {
             $0.top.equalTo(profileImageView.snp.bottom).offset(50)
             $0.left.equalTo(UIConfig.commonMargin)
             $0.right.equalTo(-UIConfig.commonMargin)
         }
         
-        view.addSubview(followingLabel)
-        view.addSubview(followersLabel)
+        contentView.addSubview(followingLabel)
+        contentView.addSubview(followersLabel)
         
         
         let hStack = UIStackView(arrangedSubviews: [followersLabel,
@@ -151,7 +216,7 @@ class UserInfoViewController: UIViewController {
         hStack.spacing = 8.0
         hStack.alignment = .center
         hStack.distribution = .fillEqually
-        view.addSubview(hStack)
+        contentView.addSubview(hStack)
         hStack.snp.makeConstraints {
             $0.top.equalTo(vStack.snp.bottom)
             $0.bottom.equalToSuperview()
@@ -162,11 +227,17 @@ class UserInfoViewController: UIViewController {
     
     private func configureUser() {
         profileImageView.sd_setImage(with: URL(string: user.avatarUrl ?? ""), completed: nil)
-        nameLabel.text = user.name
-        usernameLabel.text = user.username
+        nameLabel.text = user.name ?? user.username
+        usernameLabel.text = "@\(user.username)"
         bioTextView.text = user.bio ?? Constants.defaultBio
         followersLabel.attributedText = attributedText(withValue: user.followers, text: "Followes")
         followingLabel.attributedText = attributedText(withValue: user.following, text: "Following")
+    }
+    
+    private func configureRefreshControl() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+           refreshControl.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
+           scrollView.addSubview(refreshControl) // not required when using UITableViewController
     }
     
     // A function for creating attributedText of XXX followers and XXX following
@@ -177,6 +248,12 @@ class UserInfoViewController: UIViewController {
                                                   attributes: [.font: UIFont.mainFont(ofSize: 16),
                                                                .foregroundColor: UIColor.black]))
         return attributedTitle
+    }
+    
+    private func showTryAgainBanner() {
+        let title = "Please try again later"
+        let banner = StatusBarNotificationBanner(title: title, style: .danger)
+        banner.show()
     }
     
 }
