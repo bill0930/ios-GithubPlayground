@@ -21,12 +21,15 @@ private struct Constants {
     static let profileImageTopMargin: CGFloat = 100.0
     static let profileImageSize: CGSize = CGSize(width: 250, height: 250)
     static let labelHeight: CGFloat = 48.0
+    static let defaultBio: String = "This user is lazy. He/She does not write anything."
 
 }
 
 class UserInfoViewController: UIViewController {
     
     // MARK: - Properties
+    
+    var user: GetUserResponse
     
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
@@ -51,7 +54,7 @@ class UserInfoViewController: UIViewController {
         return label
     }()
     
-    private let usernameLabel: UILabel = {
+    private var usernameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.mainFont(ofSize: 24)
         label.textColor = .black
@@ -73,7 +76,6 @@ class UserInfoViewController: UIViewController {
         textView.snp.makeConstraints {
             $0.height.equalTo(Constants.bioTextViewHeight)
         }
-        textView.text = "OpenVanilla is a collection of Mac input methods that primarily serve Traditional Chinese users"
         return textView
     }()
     
@@ -96,8 +98,16 @@ class UserInfoViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         configureUI()
-        let url = URL(string: "https://avatars.githubusercontent.com/u/43231465?s=96&v=4")
-        profileImageView.sd_setImage(with: url, completed: nil)
+        configureUser()
+    }
+    
+    init(user: GetUserResponse) {
+        self.user = user
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - API
@@ -128,7 +138,7 @@ class UserInfoViewController: UIViewController {
         vStack.snp.makeConstraints {
             $0.top.equalTo(profileImageView.snp.bottom).offset(50)
             $0.left.equalTo(UIConfig.commonMargin)
-            $0.right.equalTo(UIConfig.commonMargin)
+            $0.right.equalTo(-UIConfig.commonMargin)
         }
         
         view.addSubview(followingLabel)
@@ -146,16 +156,17 @@ class UserInfoViewController: UIViewController {
             $0.top.equalTo(vStack.snp.bottom)
             $0.bottom.equalToSuperview()
             $0.left.equalTo(UIConfig.commonMargin)
-            $0.right.equalTo(UIConfig.commonMargin)
+            $0.right.equalTo(-UIConfig.commonMargin)
         }
-        
-        followersLabel.attributedText = attributedText(withValue: 200, text: "followers")
-        followingLabel.attributedText = attributedText(withValue: 500, text: "following")
-
-//        hStack.addArrangedSubview(followersLabel)
-//        hStack.addArrangedSubview(followingLabel)
-//        vStack.addArrangedSubview(hStack)
-        
+    }
+    
+    private func configureUser() {
+        profileImageView.sd_setImage(with: URL(string: user.avatarUrl ?? ""), completed: nil)
+        nameLabel.text = user.name
+        usernameLabel.text = user.username
+        bioTextView.text = user.bio ?? Constants.defaultBio
+        followersLabel.attributedText = attributedText(withValue: user.followers, text: "Followes")
+        followingLabel.attributedText = attributedText(withValue: user.following, text: "Following")
     }
     
     // A function for creating attributedText of XXX followers and XXX following

@@ -21,6 +21,7 @@
 		470FCE16279CC5A7002C233A /* UserAPITargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE15279CC5A7002C233A /* UserAPITargetType.swift */; };
 		470FCE19279CC7D4002C233A /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE18279CC7D4002C233A /* UserInfoViewController.swift */; };
 		470FCE1B279CD185002C233A /* UIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE1A279CD185002C233A /* UIConfig.swift */; };
+		470FCE20279CDFAB002C233A /* FetchUserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470FCE1F279CDFAB002C233A /* FetchUserRouter.swift */; };
 		47F8E7B5279BE71B0027A723 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 47F8E7B4279BE71B0027A723 /* .swiftlint.yml */; };
 		47F8E7B7279BE7210027A723 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 47F8E7B6279BE7210027A723 /* .gitignore */; };
 		47F8E7D6279BEB380027A723 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8E7D5279BEB380027A723 /* NetworkService.swift */; };
@@ -50,6 +51,7 @@
 		470FCE15279CC5A7002C233A /* UserAPITargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPITargetType.swift; sourceTree = "<group>"; };
 		470FCE18279CC7D4002C233A /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		470FCE1A279CD185002C233A /* UIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfig.swift; sourceTree = "<group>"; };
+		470FCE1F279CDFAB002C233A /* FetchUserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserRouter.swift; sourceTree = "<group>"; };
 		47F8E7B4279BE71B0027A723 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		47F8E7B6279BE7210027A723 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		47F8E7D5279BEB380027A723 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				470FCE04279C7CD7002C233A /* FetchUserController.swift */,
+				470FCE1F279CDFAB002C233A /* FetchUserRouter.swift */,
 			);
 			path = FetchUser;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				470F7939279BDCC80046FC3E /* SceneDelegate.swift in Sources */,
 				470FCE05279C7CD7002C233A /* FetchUserController.swift in Sources */,
 				470FCE09279C8405002C233A /* Extensions.swift in Sources */,
+				470FCE20279CDFAB002C233A /* FetchUserRouter.swift in Sources */,
 				47F8E7E4279BF4260027A723 /* GetUserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

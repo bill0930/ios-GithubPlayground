@@ -10,5 +10,6 @@ target 'GithubPlayground' do
   pod 'SwiftLint'
   pod 'SDWebImage'
   pod "PromiseKit", "~> 6.8"
+  pod 'NotificationBannerSwift', '~> 3.0.0'
 
 end

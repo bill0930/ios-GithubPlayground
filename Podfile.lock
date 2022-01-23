@@ -1,9 +1,13 @@
 PODS:
   - Alamofire (5.5.0)
+  - MarqueeLabel (4.0.5)
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
+  - NotificationBannerSwift (3.0.6):
+    - MarqueeLabel (~> 4.0.5)
+    - SnapKit (~> 5.0.1)
   - PromiseKit (6.15.3):
     - PromiseKit/CorePromise (= 6.15.3)
     - PromiseKit/Foundation (= 6.15.3)
@@ -21,6 +25,7 @@ PODS:
 
 DEPENDENCIES:
   - Moya (~> 15.0)
+  - NotificationBannerSwift (~> 3.0.0)
   - PromiseKit (~> 6.8)
   - SDWebImage
   - SnapKit (~> 5.0.0)
@@ -29,7 +34,9 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - MarqueeLabel
     - Moya
+    - NotificationBannerSwift
     - PromiseKit
     - SDWebImage
     - SnapKit
@@ -37,12 +44,14 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  NotificationBannerSwift: 7021be2338f8f29cf424b0aca43da462bf9e2a1a
   PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
   SDWebImage: 240e5c12b592fb1268c1d03b8c90d90e8c2ffe82
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftLint: aaa29a9f649316095a9079595cb60906bd899353
 
-PODFILE CHECKSUM: f3faaee6c20c8814cb78f37be16eae335662012b
+PODFILE CHECKSUM: 6646d274d233b50dc3645a241f21328c477c2fc1
 
 COCOAPODS: 1.11.2

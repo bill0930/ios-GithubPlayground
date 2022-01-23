@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let networkService = NetworkService(provider: MoyaProvider<MultiTarget>(plugins: [MoyaConfig.plugin]))
         
         let viewController = FetchUserController(networkService: networkService)
-        let navigationController = MainNavigationController(rootViewController: UserInfoViewController())
+        let navigationController = MainNavigationController(rootViewController: viewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }

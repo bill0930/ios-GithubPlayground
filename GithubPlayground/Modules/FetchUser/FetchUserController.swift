@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import SnapKit
+import PromiseKit
+import NotificationBannerSwift
 
 private struct Constants {
     static let searchBarHeight: CGFloat = 24.0
@@ -18,6 +20,8 @@ private struct Constants {
 class FetchUserController: UIViewController {
     
     // MARK: - Properties
+    
+    var router: FetchUserRouterProtocol?
     
     private var networkService: NetworkServiceProtocol
     
@@ -55,7 +59,7 @@ class FetchUserController: UIViewController {
     override func viewDidLoad() {
         configureUI()
         configureKeyboard()
-        
+        configureRouter()
         searchTextField.becomeFirstResponder()
     }
     
@@ -70,21 +74,26 @@ class FetchUserController: UIViewController {
     
     // MARK: - API
     
-    private func fetchUser() {
-        networkService.request(UserAPI.GetUser(username: searchTextField.text ?? ""))
-            .done { user in
-                // TODO: - push a new view controller
-            }.catch { error in
-                // TODO: - show a alert that 404b
-            }
+    private func fetchUser() -> Promise<GetUserResponse> {
+        return Promise<GetUserResponse> { seal in
+            networkService.request(UserAPI.GetUser(username: searchTextField.text ?? ""))
+                .done { user in
+                    seal.fulfill(user)
+                }.catch { error in
+                    seal.reject(error)
+                }
+        }
     }
     
     // MARK: - Selectors
     
     @objc private func handleFetchUser() {
-        let vc = UserInfoViewController()
-        navigationController?.pushViewController(vc, animated: true)
-//        fetchUser()
+        fetchUser().done { [weak self] user in
+            self?.router?.navigateToUserInfoVC(user: user)
+        }.catch { _ in
+            self.searchTextField.shake()
+            self.showNotFoundBanner()
+        }
     }
     
     //Calls this function when the tap is recognized.
@@ -117,6 +126,17 @@ class FetchUserController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
+    
+    private func configureRouter() {
+        let router = FetchUserRouter()
+        router.navigationController = navigationController
+        self.router = router
+    }
+    private func showNotFoundBanner() {
+        let title = "User Not Found"
+        let banner = StatusBarNotificationBanner(title: title, style: .danger)
+        banner.show()
+    }
 }
 
 
@@ -125,5 +145,17 @@ extension FetchUserController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         handleFetchUser()
         return true
+    }
+}
+
+fileprivate extension UITextField {
+    func shake() {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.05
+        animation.repeatCount = 5
+        animation.autoreverses = true
+        animation.fromValue = CGPoint(x: self.center.x - 4.0, y: self.center.y)
+        animation.toValue = CGPoint(x: self.center.x + 4.0, y: self.center.y)
+        layer.add(animation, forKey: "position")
     }
 }
