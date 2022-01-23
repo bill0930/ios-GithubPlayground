@@ -46,3 +46,6 @@ This is a project for demonstration purpose. Fetching data, parsing model entiti
 
 totoal: **14.5hr** actual work hours
 
+## Demo
+
+![image](ios-github-playground.gif)
